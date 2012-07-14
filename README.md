@@ -18,7 +18,7 @@ Selecting Elements
 Suppose you had the following HTML:
 
     <body>
-      <div id="content">
+	    <div id="content">
 		    <h1 class="heading">Hello World</h1>
 			<p>I am free of gorilla-sized javascript frameworks!</p>
 		</div>
@@ -50,11 +50,24 @@ Lets imagine we want to change the font and the color of the document.  Thats ea
     doc("body").style.fontFamily = "sans-serif";
 	doc("body").style.color = "#ff0000";
 	
-You've basically got the entire range of CSS options right at your fingertips here.  Of course, manually setting styles on elements is a bit tiresome.  Lets use a pre-defined CSS style instead:
+You've basically got the [entire range of CSS options](http://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-htmlelementcss) right at your fingertips here.  Of course, manually setting styles on elements is a bit tiresome.  Lets use a pre-defined CSS style instead:
 
 	doc("body").classList.add("bodyClass");
 	
-We can also remove and toggle classes on and off again in a similar way.
+We can also remove and toggle CSS classes on and off again in a similar way:
 
     doc("body").classList.remove("oldClass");
 	doc("body").classList.toggle("invisibilityCloak");
+	
+Setting up Events
+-----------------
+
+If we want to add or remove an event - say the click event - to an object its [pretty easy](http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-Registration-interfaces):
+
+	doc("#content p").addEventListener("click", function(e) {
+	    alert("Thanks for clicking!);
+	});	
+
+
+
+ 
