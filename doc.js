@@ -1,4 +1,4 @@
-// doc.js - copyright 2012
+// doc.js - copyright 2012 - https://github.com/matt1/doc.js
 ;function doc(e) {
 	// If we only got one result, return that.  
 	// Otherwise step over each NodeList item, add to an array and return
@@ -19,6 +19,10 @@ doc.each = function(e, callback) {
 	[].forEach.call(e, callback);
 }
 
+// Convenience wrapper for ready
+doc.ready = function(callback) {
+	document.addEventListener("DOMContentLoaded", callback);
+}
 
 // Add next() prototype to get next node, not whitespace
 Object.prototype.next = function() {
