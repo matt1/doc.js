@@ -12,6 +12,7 @@ Wondering about what we can do with *pure ECMA support*?
 * Setting up events on objects? A doddle; this is what *element*.addEventListener is for.
 * What about proxying calls to use a specific this? That is why modern ECMA standards provide the *function*.call method.
 * Cool animations?  CSS3 gives us quite a lot of fun stuff for free.
+
 The aim of doc.js is to provide a light-weight MIT-licensed wrapper around this pure raw functionality to provide shortcuts and convenience methods.
 
 Selecting Elements
