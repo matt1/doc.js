@@ -8,6 +8,7 @@ About
 doc.js is yet another tiny javascript framework, but I'm thumbing my nose at backwards compatibility and embracing what modern browses have to offer to provide functionality that we all use pretty much everyday without having to use a framework that brings its kitchen sink to the table.
 
 * Selecting elements by the CSS selector?  No problem - we've got document.querySelector and document.querySelectorAll for that!
+* Knowning when the document is ready? There is the *DOMContentLoaded* event for that.
 * Adding and removing styles?  Easy - just use *element*.style or if you want to add classes just use *element*.classList!
 * Setting up events on objects? A doddle; this is what *element*.addEventListener is for!
 * What about proxying calls to use a specific this? That is why modern ECMA standards provide the *function*.call method!
@@ -41,6 +42,15 @@ Or
 	var heading = doc("h1");
 	
 We've got the [pure power of the browser's DOM support via querySelectorAll](http://www.w3.org/TR/css3-selectors/) to basically pick objects however we want.
+		
+Knowing when the document is ready
+----------------------------------
+
+We've got a super simple way of doing that - just add an event listener and you're done:
+
+    document.addEventListener("DOMContentLoaded", function() {	
+	   alert("The document is ready!"); 
+	});
 		
 Manipulating CSS
 ----------------

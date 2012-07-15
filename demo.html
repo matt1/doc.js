@@ -1,0 +1,76 @@
+<!doctype html>  
+<html lang="en">  
+<head>  
+  <meta charset="utf-8">  
+  <title>doc.js Demo</title>  
+  <style type="text/css">
+	body {
+		padding			: 15px;
+		font-family		: sans-serif;
+	}
+	
+	#demo {
+		border			: 1px solid #000;
+		color			: #ff0000;
+		margin			: 15px;
+		padding			: 5px;
+		
+	}
+	
+	#demo h2 {
+		color			: #000;
+	}
+	
+	.pass {
+		color			: #00ff00;
+	}
+	
+  </style>
+  <script src="doc.js" type="text/javascript"></script>
+  <script>
+  	
+  
+	document.addEventListener("DOMContentLoaded", function() {
+		
+		// Selector tests
+		// ===================================================================================================
+		
+		// N.B. we can set styles directly...
+		doc(".byClass").style.color = "#00ff00";
+		// ... or by adding a class
+		doc("#byId").classList.add("pass");
+		doc("[testType=byAttribute]").classList.add("pass");
+		doc("#byId").next().classList.add("pass");
+		doc("[testType=byAttribute]").previous().classList.add("pass");
+		doc("#byParent").parent().classList.add("pass");
+		
+	});
+	
+
+  
+  </script>
+  
+</head>  
+<body>  
+	
+	<h1>doc.js Demo Page</h1>
+	This document shows you some of the features that doc.js provides. It also serves as a simple unit test - anything in green passed the test, anything in red isn't working as it should!
+	
+	<div id="demo">
+		<div id="selectors">
+			<h2>Selectors</h2>
+			<ul>
+				<li class="byClass">By class selector</li>
+				<li id="byId">By ID selector</li>
+				<li>By next sibling</li>
+				<li>By previous sibling</li>
+				<li testType="byAttribute">By Attribute</li>
+				<li>By parent<span id="byParent"></span></li>
+			</ul>
+		</div>
+		
+	</div>
+ 
+ 
+</body>  
+</html>  
