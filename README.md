@@ -1,11 +1,9 @@
 doc.js
 ======
 
-Yet another micro-weight javascript library for DOM manipulation
-
 About
 -----
-doc.js is yet another tiny javascript framework, but I'm thumbing my nose at backwards compatibility and embracing what modern browses have to offer to provide functionality that we all use pretty much everyday without having to use a framework that brings its kitchen sink to the table.
+doc.js is yet another tiny javascript framework, but I'm thumbing my nose at backwards compatibility and embracing what modern browses have to offer to provide functionality that we all use pretty much everyday without having to use a framework that brings its kitchen sink to the table.  
 
 Wondering about what we can do with *pure ECMA support*?
 * Selecting elements by the CSS selector?  No problem - we've got document.querySelector and document.querySelectorAll for that.
@@ -13,7 +11,8 @@ Wondering about what we can do with *pure ECMA support*?
 * Adding and removing styles?  Easy - just use *element*.style or if you want to add classes just use *element*.classList.
 * Setting up events on objects? A doddle; this is what *element*.addEventListener is for.
 * What about proxying calls to use a specific this? That is why modern ECMA standards provide the *function*.call method.
-The aim of doc.js is to provide a light-weight wrapper around this pure raw functionality to provide shortcuts and convenience methods.
+* Cool animations?  CSS3 gives us quite a lot of fun stuff for free.
+The aim of doc.js is to provide a light-weight MIT-licensed wrapper around this pure raw functionality to provide shortcuts and convenience methods.
 
 Selecting Elements
 ------------------

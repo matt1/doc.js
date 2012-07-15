@@ -1,4 +1,4 @@
-// doc.js - copyright 2012 - https://github.com/matt1/doc.js
+// doc.js - copyright 2012 https://github.com/matt1
 ;function doc(e) {
 	// If we only got one result, return that.  
 	// Otherwise step over each NodeList item, add to an array and return
@@ -14,15 +14,14 @@
 	}
 }
 
-// Simple "each" convenience function to wrap sneaky and easily-forgotten call() approach
-doc.each = function(e, callback) {
-	[].forEach.call(e, callback);
-}
+// Convenience function to wrap sneaky and easily-forgotten call() approach
+doc.each = function(e, callback) {[].forEach.call(e, callback);}
 
 // Convenience wrapper for ready
-doc.ready = function(callback) {
-	document.addEventListener("DOMContentLoaded", callback);
-}
+doc.ready = function(callback) {document.addEventListener("DOMContentLoaded", callback);}
+
+// Convenience function for parent to match pattern for next() & previous() functions
+Object.prototype.parent = function() {return this.parentNode;}
 
 // Add next() prototype to get next node, not whitespace
 Object.prototype.next = function() {
@@ -42,7 +41,3 @@ Object.prototype.previous = function() {
 	return previous;
 }
 
-// Add in convenience function for parent to match pattern for next() & previous() functions
-Object.prototype.parent = function() {
-	return this.parentNode;
-}
