@@ -36,6 +36,23 @@
 		opacity			: 0.2;
 	}
 	
+	#rotate {
+		-moz-transition	: all 2s ease;
+		-webkit-transition	: all 2s ease;
+		transition		: all 2s ease;
+		color			: #00ff00;
+	}
+	
+	.spin {
+		-moz-transform	: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		transform		: rotate(360deg);
+		
+		-moz-transform-origin: 50px 0;
+		-webkit-transform-origin: 50px 0;
+		transform-origin: 50px 0;
+	}
+	
 
 	
   </style>
@@ -79,6 +96,9 @@
 		});
 		doc("#fadeIn").addEventListener("click", function() {
 			this.style.opacity = "1";
+		});
+		doc("#rotate").addEventListener("click", function() {
+			this.classList.toggle("spin");
 		});
 
 		
@@ -125,6 +145,8 @@
 			<ul>
 				<li class="fade" id="fadeOut">Fade out on click</li>
 				<li class="fade" id="fadeIn">Fade in on click</li>
+				<li id="rotate">Rotate on click</li>
+			</ul>
 		</div>
 		
 	</div>

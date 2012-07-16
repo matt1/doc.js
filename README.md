@@ -27,7 +27,7 @@ Suppose you had the following HTML:
 		</div>
 	</body>
 	
-If you want to select an element to manipulate it its super-easy - just use the CSS selectors.  For example to select the heading we'd do this:
+If you want to select an element to manipulate it its super-easy - just use a CSS selector string as an argument for the doc() function.  For example to select the heading we'd do this:
 
     var heading = doc(".heading");
 
@@ -53,15 +53,9 @@ We've got the [pure power of the browser's DOM support via querySelectorAll](htt
 Knowing when the document is ready
 ----------------------------------
 
-We've got a super simple way of doing that - just add an event listener and you're done:
-
-    document.addEventListener("DOMContentLoaded", function() {	
-	   alert("The document is ready!"); 
-	});
-
-Of course, if you're forgetful we've added a convenience function for this too:
-
-    doc.ready(function() {
+We've got a super simple way of doing that - its basically just a shortcut for document.addEventListener("DOMContentLoaded", *callback*) but its easier to remember this way
+    
+	doc.ready(function() {
 		alert("The document is ready!");
 	});
 		
@@ -73,13 +67,10 @@ Lets imagine we want to change the font and the color of the document.  Thats ea
     doc("body").style.fontFamily = "sans-serif";
 	doc("body").style.color = "#ff0000";
 	
-You've basically got the [entire range of CSS options](http://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-htmlelementcss) right at your fingertips here.  Of course, manually setting styles on elements is a bit tiresome.  Lets use a pre-defined CSS style instead:
+You've basically got the [entire range of CSS options](http://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-htmlelementcss) right at your fingertips here.  Of course, manually setting styles on elements is a bit tiresome.  Lets use a pre-defined CSS style instead by manipulating the classList:
 
 	doc("body").classList.add("bodyClass");
-	
-We can also remove and toggle CSS classes on and off again in a similar way:
-
-    doc("body").classList.remove("oldClass");
+	doc("body").classList.remove("oldClass");
 	doc("body").classList.toggle("invisibilityCloak");
 	
 Setting up Events
